@@ -1,0 +1,120 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Section",
+        href: "#"
+      },
+      {
+        text: "Subsection"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+      <p>
+        Use this form to appeal against a £100 penalty for filing your Self Assessment tax 
+        return late, from tax year2023 to 2024 onwards if:   
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>you're appealing within 30 days of the date HMRC sent the penalty notice</li>
+        <li>you have a reasonable excuse for late filing</li>
+      </ul>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "gov-gateway",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Before you start
+      </h2>
+
+      <p>
+        We may not be able to process your appeal until you've sent your Self Assessment tax return.
+      </p>
+
+      <p>
+        For guidance on what a reasonable excuse, see <a href="#">what may count as a resonable excuse</a>.
+      </p>
+
+      <p>
+        You will be asked to give us:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>that date the penalty was issued</li>
+        <li>the date you filed your Self Assessment tax return, if you've filed it</li>
+        <li>details of the reasonable excuse for late filing</li>
+      </ul>
+
+      <p>
+        If you don't think you should be in Self Assessment, <a href="#">check if you need to fill in a Self Assessment tax return</a>.
+      </p>
+
+      <p>
+        You can track this form in your <a href="">personal tax account</a>.
+      </p>
+
+    </div>
+
+  </div>
+
+   <!-- <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div> -->
+
+{% endblock %}
